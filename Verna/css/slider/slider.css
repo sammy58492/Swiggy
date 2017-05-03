@@ -1,0 +1,23 @@
+.jssora21l, .jssora21r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background: url(../slider/img/a19.png) center center no-repeat;
+	overflow: hidden;
+	cursor:default !important;
+}
+.jssora21l { background-position: -3px -33px; }
+.jssora21r { background-position: -63px -33px; }
+.jssora21l:hover { background-position: -123px -33px; }
+.jssora21r:hover { background-position: -183px -33px; }
+.jssora21l.jssora21ldn { background-position: -243px -33px; }
+.jssora21r.jssora21rdn { background-position: -303px -33px; }
+
+
+
+
+
+

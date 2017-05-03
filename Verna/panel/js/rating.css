@@ -1,0 +1,89 @@
+.rating {
+	cursor: pointer;
+	margin-top: 3px;
+	clear: both;
+	display: block;
+}
+.star{
+	float: left;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -999em;
+	cursor: pointer;
+	margin-left:10px;
+}
+
+.star,
+.star a {background: url('../../images/review/star.gif') no-repeat 0 0px;background-size:30px;}
+.star a {
+	display: block;width:30px;height:30px;
+}
+#aceptar{
+  font-size: 34px;
+  padding: 8px 14px 9px;
+  background-color: #FF8000;
+  position: center;
+  width: 250px;
+	 height: 45px;
+}
+#aceptar:hover{
+  background-color: #FC9200;
+  position: center;
+  width: 250px;
+	height: 45px;
+}
+.aceptar{
+  font-size: 34px;
+  padding: 8px 14px 9px;
+  background-color: #FF8000;
+  position: center;
+  width: 40px;
+	height: 15px;
+}
+
+.aceptar:hover{
+background-color: #FC9200;
+position: center;
+}
+
+div.rating div.hover a,
+div.rating div a:hover {
+	background-position: 0 -60px;
+}
+
+#custom2 .innerbox2 {
+	position: relative;
+	float: center;
+	width: auto;
+	height: auto%;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+	overflow: hidden;
+	background-color: #fff;
+  font-family: arial, verdana, san-serif;
+  font-size: 13px;
+}
+#custom2 .innerbox2 #custominfo2 {
+	float: center;
+	width: auto;
+	height: auto%;
+	padding: 20px
+}
+#custom2 {
+	float: center;
+	width: auto;
+	height: auto;
+	/*border: 1px solid #c7c7c7;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;*/
+	margin-bottom: 37px
+}
+#comment{
+/*width:300px;
+height:100;
+clear: both;
+display: block;*/
+  }

@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+.input-group select { 
+border: 1px solid #CE4A4A;
+    border-radius: 6px;
+    height: 38px;
+    margin-top: 8px;
+    width: 200px;
+}
+.hm_txtbxs {
+    border: 1px solid #ED1E22;
+    border-radius: 6px;
+    box-shadow: 0 0 4px #ED1E22;
+    color: #81807D;
+    font-size: 15px;
+    height: 35px;
+    margin: 6px 20px;
+    padding: 6px 4px;
+    text-indent: inherit;
+   
+}
+.hm_txtbxt {
+    border: 1px solid #ED1E22;
+    border-radius: 6px;
+    box-shadow: 0 0 4px #ED1E22;
+    color: #81807D;
+    font-size: 15px;
+    height: 35px;
+    margin: 6px 20px;
+    padding: 2px 4px;
+    text-indent: inherit;
+    width: 200px;
+}
+.banner {
+float: left;
+width: 100%;
+height: 658px;
+background:url(../images/geoNew/banner.jpg) no-repeat;
+background-size:100%;
+}
+
+
+/************************************************** Middle Position Start *******************************************************/
+.middle_div_border{
+	background:url(../images/geoNew/border-img.png);
+	padding:10px;
+	border-radius:8px;
+	width: 928px;
+	margin: 5px auto 0px auto;
+	
+}
+.middle_div{
+width: 865px;
+height: 515px;
+background: #fff;
+
+border-radius:8px;
+margin:0px auto 0px auto;
+padding: 25px 30px 5px;
+}
+.middle_div h2{
+	font-size:37px;
+	color:red;
+     margin-top:0;
+	 margin-bottom:8px;
+	text-align:center;
+	font-weight:bold;
+	
+}
+.middle_div hr{
+margin-top: 20px;
+margin-bottom: 20px;
+border: 0;
+border-top: 1px solid rgba(238, 238, 238, 0.37);
+}
+.fild_div{
+	padding: 5px 0;
+	border-radius:8px;
+	min-height:45px;
+}
+.input-div{
+	position: relative;
+display: table;
+border-collapse: separate;
+float: left;
+width: 250px;
+}
+.btn_div{
+	text-align:center;
+	margin:0px auto 0px auto;
+	padding:17px;
+	border-radius:8px;
+
+}
+.map_div{
+	text-align:center;
+	padding:20px 20px 20px 40px;
+	border-radius:8px;
+	text-align:center;
+	clear:both;
+
+}
+.text-1{
+	font-size:20px;
+	color:red;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight:normal;
+	margin:6px 10px;
+	padding:0;
+	float:left;
+
+}
+.mediummapbox {
+width: 650px;
+height: 260px;
+position: relative;
+overflow: hidden;
+border: 1px solid #f2f2f2;
+border-top: 1px solid #dedede;
+background: #ededed;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+margin: 0px auto 0px auto;
+}
+.letfind {
+background: url(../images/geoNew/let_us_find.png)no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+border: medium none;
+font-size: 0.00001px;
+height:37px;
+	float:left;
+width: 252px;
+}
+.letfind:hover {
+background: url(../images/geoNew/let_us_find_hover.png)no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+border: medium none;
+font-size: 0.00001px;
+height:37px;
+
+width: 252px;
+}
+.letsgo {
+background: url(../images/geoNew/lets_go.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+border: medium none;
+height: 37px;
+width: 174px;
+float:left;
+
+}
+.letsgo:hover {
+background: url(../images/geoNew/lets_go_hover.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+border: medium none;
+
+}
+/*********************************************************** END *****************************************************/

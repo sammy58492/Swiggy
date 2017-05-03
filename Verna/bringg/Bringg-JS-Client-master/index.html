@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+
+    <script>
+        function BringgClient(options) {
+            this.accessToken = options.accessToken;
+            this.secretKey = options.secretKey;
+            this.url = options.url || 'http://api.bringg.com';
+            this.CryptoJS = options.CryptoJS;
+            this.debug = options.debug || true;
+        }
+
+        BringgClient.prototype.createTask = function(task_details) {
+            var uri =this.url + '/partner_api/tasks'
+                    , request = new XMLHttpRequest();
+
+            request.onreadystatechange = function() {
+                if (request.readyState == 4 && request.status == 200) {
+                } else {
+                }
+            };
+
+            var params = this.sign_request(task_details);
+
+            request.open( 'POST', uri, true );
+            request.setRequestHeader('Content-type', 'application/json');
+            request.send( JSON.stringify(params) );
+        };
+
+        BringgClient.prototype.sign_request = function(params) {
+            if (!params.timestamp) {
+                params.timestamp = Date.now();
+            }
+            if (!params.access_token) {
+                params.access_token = this.accessToken;
+            }
+
+            var query_params = '';
+
+            for (var paramIdx in params) {
+                var param = params[paramIdx];
+                if (query_params.length > 0) {
+                    query_params += '&';
+                }
+                query_params += paramIdx+'='+encodeURIComponent(param);
+            }
+
+            if (this.debug) {
+                var targetDiv = document.getElementById('query');
+                targetDiv.appendChild(document.createTextNode(query_params));
+            }
+
+            var signature = CryptoJS.HmacSHA1(query_params, this.secretKey).toString();
+            params.signature = signature;
+            if (query_params.length > 0) {
+                query_params += '&';
+            }
+            query_params += "signature="+signature;
+            if (this.debug) {
+                var targetDiv = document.getElementById('signature');
+                targetDiv.appendChild(document.createTextNode(signature));
+                targetDiv = document.getElementById('final');
+                targetDiv.appendChild(document.createTextNode(query_params));
+            }
+            return params;
+        };
+
+    </script>
+    <script>
+        var onload = function() {
+            document.getElementById('create_task').addEventListener('click', function () {
+                bc = new BringgClient({ accessToken: document.getElementById('access_token').value,
+                    secretKey: document.getElementById('secret_key').value,
+//                    url: 'http://localhost:3000/',
+                    CryptoJS: CryptoJS
+                });
+
+                bc.createTask(JSON.parse(document.getElementById('jsonData').value));
+            })
+        }
+    </script>
+</head>
+<body onload="onload();">
+  <p> test content is: <b>{"title": "Pizza Delivery", "address": "416 Water St. New York, NY 10002", "scheduled_at": "2014-11-29T04:16:09.123Z", "company_id": "3208", "team_id": "3208", "lat": "45.5","lng": "12.5"}</b><br><br>
+    
+    tokenkey :  <b>pyZgq26MSTrjBJys5zxe</b><br><br>
+    secret key:  <b>fATzKYy-phnMUBKdjx8H</b>
+    </p>
+    <label for="access_token">Access Token:</label>
+    <input id="access_token" />
+    <label for="secret_key">Secret Key:</label>
+    <input id="secret_key" /> <br/>
+    <label for="jsonData">Json Data</label>
+    <input id="jsonData" />
+    <button id="create_task">Create Task</button>
+
+    <br /><br/>
+    <h4 id="query"></h4> <br/>
+    <h4 id="signature"></h4> <br/>
+    <h4 id="final"></h4>
+    
+ 
+    
+</body>
+</html>

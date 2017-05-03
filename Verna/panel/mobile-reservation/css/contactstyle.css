@@ -1,0 +1,267 @@
+/*Request Collection*/
+body{
+background: #fff;	
+}
+
+.conmain:after,
+.conmain:before,
+
+.main:after,
+.main:before,
+.restauant_dv:after,
+.restauant_dv:before,
+.field:after,
+.field:before{
+	content:"";
+	display:table;
+}
+
+
+.conmain:after,
+.conmain:before,
+.main:after,
+.main:before,
+
+.restauant_dv:after,
+.restauant_dv:before,
+.field:after,
+.field:before{
+	clear:both;
+}
+
+
+
+.Request_Collection:after,
+.Request_Collection:before,
+.searcharea:after,
+.searcharea:before,
+.wrapp:after,
+.wrapp:before,
+.new_restauant_menu_dv:after,
+.new_restauant_menu_dv:before,
+.header-img:after,
+.header-img:before{
+	content:"";
+	display:table;
+}
+
+
+
+
+.Request_Collection:after,
+.Request_Collection:before,
+.searcharea:after,
+.searcharea:before,
+.wrapp:after,
+.wrapp:before,
+.new_restauant_menu_dv:after,
+.new_restauant_menu_dv:before,
+.header-img:after,
+.header-img:before{
+	clear:both;
+}
+
+
+.Req_Col_row:after,
+.Req_Col_row:before,
+.Req_Col_in:after,
+.Req_Col_in:before,
+.Request_Collection:after,
+.Request_Collection:before{
+	content:"";
+	display:table;
+}
+
+
+
+.Req_Col_row:after,
+.Req_Col_row:before,
+.Req_Col_in:after,
+.Req_Col_in:before,
+.Request_Collection:after,
+.Request_Collection:before{
+	clear:both;
+}
+
+.Request_Collection{
+    margin: 0 auto;
+    width: 95%;
+}
+
+
+
+.Request_Collection h4{
+	text-align:center;
+	font-weight:600;
+	font-size:22px;
+	color:#5d6063;
+	text-transform:uppercase;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.Req_Col_in{
+	background:#f2f2f2;
+	border:1px solid #e7e7e7;
+	border-radius:10px;
+	margin:20px 0 20px 0;
+	padding:30px 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.Req_Col_left{
+	float:left;
+	width:100%;
+	margin:0 0 15px 0;
+}   
+
+.Req_Col_left_hd{
+	width:100%;
+	font-size:16px;
+	color:#292929;
+	border-bottom:1px solid #cccccc;
+	padding:0 0 10px 0;
+	margin:0 0 20px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+}
+
+
+.Req_Col_row{
+	margin:0 0 10px 0;	
+}
+
+.Req_Col_row label {
+	float:left;
+	width:100%;
+	font-size:12px;
+	margin:0 0 11px 0;
+}
+
+.cami{
+	float:left;
+	margin:10px 8px 0 8px;
+	font-size:12px;
+}
+
+.cami2{
+	float:left;
+	margin:20px 8px 0 8px;
+	font-size:12px;
+}
+
+
+.Req_Col_row label span{
+	color:#F00;
+}
+
+.Req_Col_row input[type='text'] {
+	border-radius:5px;
+	width:99%;
+	float:left;
+	background:#fff;
+	border:1px solid #ccc;
+	padding:12px 5px;
+}
+
+
+.Customer_Add{
+	width:100%;
+	float:left;
+	margin:10px 0;
+	font-size:14px;
+}
+
+.Customer_Add span{
+	color:#F00;
+}
+
+
+.Req_Col_row textarea{
+	border-radius:5px;
+	width:99%;
+	float:left;
+	background:#fff;
+	border:1px solid #ccc;
+	padding:0 5px;
+	height:60px;
+	resize:none;
+}
+
+.Req_Col_row label.note {
+	margin-top: 20px;
+}  
+
+.Req_Col_right{
+	float:left;
+	width:100%;
+}
+
+
+.confirm_row{
+	margin:10px 0;
+	float:left;
+	width:100%;
+}
+.confirm_row input{
+	display:none;
+}
+
+.confirm_row span{
+	font-size:12px;
+	color:#292929;
+	float:left;	
+}
+
+.btn_Col_row{
+	text-align:center;
+	margin:0 0 10px 0;
+}
+
+
+.Request_btn{
+	padding:9px 45px;
+	color:#fff;
+	font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+	text-transform:uppercase;
+	background:#97d700;
+	border:1px solid #97d700;
+	border-radius: 4px;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-weight:600;
+}
+.Request_btn:hover{
+	background:none;
+	border:1px solid #72a200;
+	color:#72a200;
+}
+
+.main {
+    width: 100%;
+    margin: 0px auto 0px auto;
+}
+
+.conmain {
+    width: 100%;
+    margin: 0px auto 0px auto;
+	border-top: 1px solid #ccc;
+}
+
+/*Request Collection*/
+
+@media only screen and (min-width:320px) and (max-width: 768px)  {
+.Req_Col_row input[type='text'] {
+	width:96%;
+}
+
+
+.Req_Col_row textarea{
+	width:96%;
+}
+		
+}
+
+
+
+

@@ -1,0 +1,469 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+body{	
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+/**{
+	margin:0;
+	padding:0;
+
+
+}*/
+
+
+.inwrapbox:before,.inwrapbox:after,
+.pop_bloc:before,.pop_bloc:after,
+.leftcol:before,.leftcol:after,
+.cont_right:before,.cont_right:after,
+.cont_left:before,.cont_left:after,
+.cont:before,.cont:after,
+.inwrap:before,.inwrap:after,
+.allheader:before,
+.allheader:after,
+.option_popup_header:before,
+.option_popup_header:after,
+.inwrap:before,.inwrap:after,
+.wrapper:before,.wrapper:after{	display:table;
+	content:"";
+
+}
+
+.inwrapbox:before,.inwrapbox:after,
+.pop_bloc:before,.pop_bloc:after, .leftcol:before,.leftcol:after, .cont_right:before,.cont_right:after,.cont_left:before,.cont_left:after,.cont:before,.cont:after,.inwrap:before,.inwrap:after,.allheader:before,.allheader:after,.option_popup_header:before,.option_popup_header:after,.inwrap:before,.inwrap:after,.wrapper:before,.wrapper:after{	clear:both;
+
+}
+
+.wrapper{	width:800px;
+	margin:0 auto;
+	background:#fff;
+	border-radius:5px;
+
+}
+
+.option_popup_header{	
+	background:#eeeeee;
+	border-bottom:1px solid #a6a6a6;
+	border-radius:5px 5px 0 0;
+	font-size:20px;
+	padding:10px 50px 10px 30px;
+	color:#439600;
+	position:relative;	
+}
+
+.option_popup_header span{	color:#414141;
+
+}
+
+.inwrap{	padding:20px 30px 0;}
+
+.inwrapbox{	padding:20px 30px 0;}
+
+.cont{	margin:0 0 10px 0;
+
+}
+
+.allheader{	
+    font-size:16px !important;
+	color:#000;
+	border-bottom:1px solid #ccc;
+	padding:0 0 5px 0;
+	margin:0 0 15px 0;
+	font-weight:normal !important;
+
+}
+
+
+.selectbox{	
+	width:265px !important;
+	height:35px;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+
+.cont_left{	float:left;
+	width:300px;
+	margin:0 35px 0 0;
+
+}
+
+.cont_right{	float:left;
+	width:300px;
+
+}
+
+.cont_left td{	font-size:13px;
+	color:#333;
+	padding:2px 0;
+
+}
+
+.cont_right td{	font-size:13px;
+	color:#333;
+	padding:2px 0;
+
+}
+
+.cont textarea{	border:1px solid #ccc;
+	width:97.2%;
+	height:70px;
+	border-radius:5px;
+	padding:10px;
+	resize:none;
+
+}
+
+.addcart{	width:205px;
+	height:40px;
+	border-radius:5px;
+	background:#e74c3c;
+	color:#fff;
+	font-size:18px;
+	border:1px solid #e74c3c;
+	cursor:pointer;
+	 margin-bottom: 30px;
+     margin-top: 20px;
+
+}
+
+.addcart:hover{	background:#b51100;
+	border:1px solid #b51100;
+
+}
+
+/*radio*/.radioicon input[type=radio].css-checkbox {position:absolute;
+ z-index:-1000;
+ left:-1000px;
+ overflow: hidden;
+ clip: rect(0 0 0 0);
+ height:1px;
+ width:1px;
+ margin:-1px;
+  padding:0;
+ border:0;
+
+}
+
+.radioicon input[type=radio].css-checkbox + label.css-label {padding-left:25px;
+height:17px;
+ display:inline-block;
+line-height:15px;
+background-repeat:no-repeat;
+background-position: 0 0;
+font-size:15px;
+vertical-align:middle;
+cursor:pointer;
+font-size:13px;
+ color:#333;
+
+}
+
+.radioicon input[type=radio].css-checkbox:checked + label.css-label {background-position: 0 -19px;
+
+}
+
+.radioicon label {margin-right:0;
+ width:100%;
+ 
+}
+
+.radioicon label.css-label {
+	/*background-image:url(radio.png);*/
+	background-image:url('../images/common/radio.png') no-repeat 0 0;
+	
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+
+}
+
+/*radio*//*checkbox*/.selecticon input[type=checkbox].css-checkbox {position:absolute;
+ z-index:-1000;
+ left:-1000px;
+ overflow: hidden;
+ clip: rect(0 0 0 0);
+ height:1px;
+ width:1px;
+ margin:-1px;
+ padding:0;
+ border:0;
+
+}
+
+.selecticon input[type=checkbox].css-checkbox + label.css-label {padding-left:25px;
+height:20px;
+ display:inline-block;
+line-height:20px;
+background-repeat:no-repeat;
+background-position: 0 0;
+font-size:20px;
+vertical-align:middle;
+cursor:pointer;
+font-size:13px;
+ color:#333;
+
+}
+
+.selecticon input[type=checkbox].css-checkbox:checked + label.css-label {background-position: 0 -20px;
+
+}
+
+.selecticon label {margin-right:0;
+ width:100%;
+
+}
+
+.selecticon label.css-label {
+	/*background-image:url(check.png);*/
+	background-image:url('../images/common/check.png') no-repeat 0 0;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+
+}
+
+/*checkbox*/
+.option_popup_close{
+	float: right;
+}
+.option_popup_close_btn{
+	border: none;
+	background: none;
+	cursor: pointer;
+	color:#a7a7a7;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	background-color: transparent;
+	font-size: 16px;
+    border-radius: 4px;
+    margin-right: 15px;
+    padding: 4px 7px 3px 7px;
+	position: absolute;
+  top: 12px;
+  right: 0;
+}
+.option_popup_header h3 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: normal;
+}
+  
+  
+.option_popup_close_btn:hover {
+  color: #333;
+  background-color: #ccc;
+}
+.ing-chekboxdp {
+	width:50%;
+	margin:0 0 3px 0;
+}
+.field_label {
+  color: #666666;
+  font-size: 13px !important;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  font-weight: 400;
+  float: left;
+  width: 160px;
+}
+
+
+
+
+@media (max-width:768px){
+#popupbox {
+    height: auto !important;
+    left: 3% !important;
+    width: 95% !important;
+}
+.option_popup_header{	
+	padding:10px 50px 10px 10px;
+}
+
+
+
+
+.wrapper {
+    width: 100% !important;
+}
+
+.pop_bloc {
+    margin: 10px 0 0;
+	padding:0 10px;
+	width:100%;
+}
+
+.inwrapbox {
+    padding: 20px 10px;
+}
+
+.inwrap {
+    padding: 20px 10px;
+}
+
+
+.cont textarea{
+	    width: 92%;
+}
+
+	
+}
+
+
+
+@media (max-width:640px){
+.ing-chekboxdp {
+    width: 100%;
+	margin:0 0 3px 0;
+}
+}
+
+/*--------------------------- For Write a Review Popup CSS ------------------------*/
+.texttbox_full{
+	width:100%;
+	height:35px;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+.selectbox_full{
+	width:100%;
+	height:35px;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+
+.review-star{
+	list-style:none;
+	padding:0;
+	margin:0;
+		float:left;
+}
+.review-star li{
+	float:left;
+	margin-right:2px;
+}
+.rating{
+	color: #333333;
+	font-size: 11px;
+	font-family: 'interstateregular';
+	margin: 3px 0px 0px 10px;
+	text-align:left;
+	float:left;
+}
+/*------------------------------- For Write a Review Popup CSS END ------------------------*/
+.added_photo{
+	padding:0;
+	margin:30px 0px 0px 0px;
+	list-style: none;	
+}
+.added_photo li{
+	padding:0;
+	margin:0px 0px 0px 0px;
+	float:left;
+	width:33.33%;
+	text-align:center;
+}
+/*--------------- Conect with Facebook -------------*/
+.rest_logo_fbconect{
+	margin:0px auto;
+	width:114px;
+}
+.rest_logo_fbconect img{
+	width:114px;
+}
+.get_points{
+	color:#353535;
+	font-family: 'Open Sans', sans-serif;
+	font-size:18px;
+	text-align: center;
+	font-weight:300;
+
+}
+.offer_dsp{	
+	color:#353535;
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	font-weight:300;
+	line-height: 30px;
+}
+
+.imageThumb {
+	padding: 2px;
+    margin: 43px 15px 0px 0px;
+    float: left !important;
+    width: 29.33%;
+    text-align: center;
+	
+ }
+ 
+/*====================================================*/
+ 
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+.modal-dialog {
+font-family: 'Open Sans', sans-serif;
+  border-radius: 5px;
+  margin-left: ;
+  /*position: fixed;*/
+  position: absolute;
+  left: 35%;
+  top: 15%;
+  z-index: 11;
+  width: 400px;
+  margin:0 auto;
+  -webkit-transform: translate(0, 10%);
+  -ms-transform: translate(0, 10%);
+  transform: translate(0, 10%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal-box{
+	background:#fff;
+	border-radius:5px;
+}
+
+
+
+.modal-body {
+  padding: 20px;
+  text-align:center;
+}
+
+.modal-body:before,
+.modal-body:after{
+	display:table;
+	content:"";
+}
+
+
+.modal-body:before,
+.modal-body:after{
+	clear:both;
+}
+
+ 
+ 
+ 
+@media (min-width:320px) and (max-width:991px){
+	.modal-dialog {	width:90%;	left: 5%;}
+}
+
+@media (min-width:320px) and (max-width:414px){
+	.btnl {width: 100%; float:left}
+	.btnr {width: 100%; float:left; margin:15px 0 0 0;}
+}
