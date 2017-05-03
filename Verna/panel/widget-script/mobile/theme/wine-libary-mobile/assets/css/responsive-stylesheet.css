@@ -1,0 +1,397 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media (min-width: 1400px) and (max-width: 10000px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+
+}
+
+@media (max-width:1400px){
+
+}
+@media (max-width:1200px){
+
+
+}
+@media (max-width:991px){
+
+	
+}
+@media (max-width:800px){
+
+
+}
+@media (max-width:768px){
+
+}
+@media (max-width:767px){
+
+}
+
+@media (max-width:640px){
+
+}
+@media (max-width:622px){
+.cartpro_hdname{
+	width:100%;
+}
+}
+@media (max-width:600px){
+
+}
+@media (max-width:480px){
+
+.cartpro_row_name h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 0px 5px;
+    padding: 0px;
+}
+
+
+}
+@media (max-width:414px){
+.bannericon ul {
+    margin: 0px auto 0px;
+    width:100%;
+}
+.bannericon ul li {
+    width:33%;
+	padding:0;
+}
+}
+@media (max-width:330px){
+
+}
+
+@media (max-width:320px){
+
+}
+
+@media (max-width:505px){
+	.selectfield {
+    float: left;
+    width: 59px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    margin: 10px 0px 0px;
+}
+
+	
+
+}
+
+
+@media (max-width:433px){
+	.selectfield {
+    float: left;
+    width: 59px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    margin: 7px 0px ;
+}
+
+.detsel_top label {
+    float: left;
+    font-size: 15px;
+    color: #333;
+    font-family: "Open Sans",sans-serif;
+	font-weight: 400;
+    margin: 8px 7px 0px 12px;
+    display: inline-block;
+    max-width: 100%;
+}	
+
+
+.aggiungi {
+    float: right;
+    background: none repeat scroll 0% 0% #8B130B;
+    margin:3px 12px 0 0;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF;
+    border: medium none;
+    padding: 7px 18px;
+    font-family: "Open Sans",sans-serif;
+}
+
+
+}
+
+
+@media (max-width:425px){
+
+.detsel_top label {
+    float: left;
+    font-size: 12px;
+    color: #333;
+    font-family: "Open Sans",sans-serif;
+	font-weight: 400;
+    margin: 8px 4px 0px 12px;
+    display: inline-block;
+    max-width: 100%;
+}	
+
+.aggiungi {
+    float: right;
+    background: none repeat scroll 0% 0% #8B130B;
+    margin:0 12px 0 0;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF;
+    border: medium none;
+    padding: 7px 18px;
+    font-family: "Open Sans",sans-serif;
+}
+
+	.selectfield {
+    float: left;
+    width: 59px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    margin: 5px 0px 0px;
+}
+
+
+}
+
+@media (max-width:347px){
+
+.detsel_top_right {
+    width: 35%;
+    float: right;
+}
+
+.detsel_top_left {
+    width: 55%;
+    float: left;
+}
+
+}
+
+
+@media (max-width:360px){
+.detsel_mid th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+th {
+    text-align: left;
+}
+
+ th {
+    padding: 0px 0px 20px 12px;;
+}
+
+
+
+.detsel_mid td {
+    padding: 0px 0px 20px 12px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #333;
+    vertical-align: top;
+}
+
+
+.detsel_bott th {
+     font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    vertical-align: top;
+    padding: 0px 0px 20px 12px;
+}
+
+.detsel_bott td {
+     
+	 padding: 0px 0px 10px 12px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000;
+    text-transform: none;
+    vertical-align: top;
+
+}
+
+.cartpro_row_name h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0px 0px 5px;
+    padding: 0px;
+}
+
+
+}
+
+@media (max-width:320px){
+.detsel_mid th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+th {
+    text-align: left;
+}
+
+ th {
+    padding: 0px 0px 20px 12px;;
+}
+
+
+
+.detsel_mid td {
+    padding: 0px 0px 20px 12px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #333;
+    vertical-align: top;
+}
+
+
+.detsel_bott th {
+     font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    vertical-align: top;
+    padding: 0px 0px 20px 12px;
+}
+
+.detsel_bott td {
+     
+	 padding: 0px 0px 10px 12px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #000;
+    text-transform: none;
+    vertical-align: top;
+
+}
+
+.cartpro_row_name h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0px 0px 5px;
+    padding: 0px;
+}
+
+
+}
+@media (min-width:623px){
+	
+	.cartpro_hd_dt{
+	float:right;
+	font-size:14px;
+	color:#000;
+	margin: 8px 0 0;
+	/*position:relative;
+	left:0%;*/
+}
+	
+	
+}
+
+
+
+@media (max-width:363px){
+
+.detsel_top_right {
+    width: 35%;
+    float: right;
+}
+
+.detsel_top_left {
+    width: 56%;
+    float: left;
+}
+
+	.selectfield {
+    float: left;
+    width: 59px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    margin: 5px 0px 0px;
+}
+
+.detsel_top label {
+    float: left;
+    font-size: 12px;
+    color: #333;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    margin: 8px 6px 0px 12px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+}
+
+
+
+
+@media (min-width:320px) and (max-width:330px){
+
+.detsel_top_right {
+    width: 35%;
+    float: right;
+}
+
+.detsel_top_left {
+    width: 56%;
+    float: left;
+}
+
+	.selectfield {
+    float: left;
+    width: 54px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    margin: 5px 0px 0px;
+}
+
+.detsel_top label {
+    float: left;
+    font-size: 12px;
+    color: #333;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    margin: 8px 4px 0px 12px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+
+.vendor_btn {
+    width:100%;
+	float: right;
+    background: none repeat scroll 0% 0% #444444;
+    margin:0 0 15px 0;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF;
+    cursor:pointer;
+	border: medium none;
+    padding: 7px 22px;
+    font-family: "Open Sans",sans-serif;
+}
+
+}

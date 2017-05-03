@@ -1,0 +1,1444 @@
+var Visuals = {
+    CreateWhereAmIButton: function (a, c, b) {
+        if (b) {
+            b = 'id="' + b + '" '
+        } else {
+            b = ""
+        }
+        return "<div " + b + 'class="whereamibutton nonselectable"><div class="titlebox default"><span class="title"><?= $lang_resource['BODY_ORDER_FOOD_TITLE'] ?></span></div><div class="innerbox hand" onclick="' + c + '"><div class="captionbox"><span class="caption">' + a + "</span></div></div></div>"
+    },
+	CreateWhrYouButton: function (a, c, b) {
+		alert("ok1222")
+		 var list = Array(1,2,3,4);
+	   var ralist = list[Math.floor((Math.random()*list.length))];
+	  
+		var htms = '<div style="width: 100%;min-height: 727px;margin: 0px 0px 0px 0px;padding: 0 0 130px;float: left;background: no-repeat; background:url(panel/images/banner/home'+ralist+'/<?=$script_id?>/banner.jpg);background-repeat: no-repeat;background-size: cover;" class="banner">';
+      htms += '<div class="container">';
+   
+    	htms += '<div class="bannericon">';
+        	htms += '<ul>';
+            	htms += '<li><img src="<?=$module_image_link?>/images/banner-icon1.png" alt=""></li>';
+                htms += '<li><img src="<?=$module_image_link?>/images/banner-icon2.png" alt=""></li>';
+                htms += '<li><img src="<?=$module_image_link?>/images/banner-icon3.png" alt=""></li>';
+           htms += '</ul>';
+        htms += '</div>';
+    
+	
+     	htms += '<div class="bannername"><?= $lang_resource['BODY_ORDER_BANNER_NAME'] ?></div>';  
+        htms += '<div class="home_form_dv" id="mid_lft">';
+
+            htms += '<input type="text" class="add_text"  placeholder="<?=$lang_resource['BODY_ORDER_ADDRESS'] ?>"><button type="button" class="geo_btn_front" ><img src="<?=$module_image_link?>/images/add-icon.png" alt=""></button>';       
+           htms += ' <button type="button" class="letsgo_btn" onclick="MainCustom.SaveWhereAmI()"><?= $lang_resource['BODY_ORDER_LETS_GO'] ?></button>';       
+        htms += '</div>';
+    htms += '</div>';
+    
+  
+    htms += '<div class="bannerf_dv">';
+    	htms += '<div class="container">';
+        	htms += '<ul>';
+            	htms += '<li>';
+                    htms += '<a href="#">';
+                        htms += '<h1><span class="has">#</span> <span class="no">1</span><span class="name"><?= $lang_resource['BODY_ORDER_BROWSE'] ?></span></h1>';
+                        htms += '<p><?= $lang_resource['BODY_ORDER_BROWSE_DES'] ?></p>';
+                    htms += '</a>';
+                htms += '</li>';
+                htms += '<li>';
+                    htms += '<a href="#">';
+                        htms += '<h1><span class="has">#</span> <span class="no">2</span> <span class="name"><?= $lang_resource['BODY_ORDER_SELECT'] ?></span></h1>';
+                        htms += '<p><?= $lang_resource['BODY_ORDER_SELECT_DEC'] ?></p>';
+                    htms += '</a>';
+                htms += '</li>';
+                htms += '<li>';
+                    htms += '<a href="#">';
+                        htms += '<h1><span class="has">#</span> <span class="no">3</span> <span class="name"><?= $lang_resource['BODY_ORDER_DRINK'] ?></span></h1>';
+                       htms += ' <p><?= $lang_resource['BODY_ORDER_DRINK_DEC'] ?></p>';
+                    htms += '</a>';
+                htms += '</li>';
+        htms += '</ul>';
+        htms += '</div>';
+        htms += '</div>';
+   	    htms += '</div>';
+		
+		return htms;
+		},
+	CreateWhrYouButton1: function (a, c, b) {
+        if (b) {
+            b = 'id="' + b + '" '
+        } else {
+            b = ""
+        }
+	   var list = Array(1,2,3,4);
+	   var ralist = list[Math.floor((Math.random()*list.length))];
+
+		var htms = '<div class="banner" style="background:url(panel/images/banner/'+ralist+'/banner.jpg) no-repeat 0 0; background-size:100% 774px !important;">';
+            htms += '<div class="main">';
+          	htms += '<h1>Order food online from best<br />restaurants nearby!</h1>';
+			htms += '<div class="delivery_dv">';
+			htms += '<center>';
+
+    		htms += '<div class="boxcheck"><input id="checkbox1" checked="checked" onclick="Visuals.CheckSelect1()" type="checkbox" name="checkbox" value="1" style="opacity:0;"><label for="checkbox1">Delivery</label></div>';
+    		htms += '<div class="boxcheck"><input id="checkbox2" type="checkbox" onclick="Visuals.CheckSelect2()" name="checkbox" value="2" style="opacity:0;"><label for="checkbox2">Pick up</label></div>';
+			htms += '<input type="radio" id="deliveryType" style="display:none;" value="1" checked="checked" name="deliveryType" >'
+			
+			
+    		htms += '</center>';
+			htms += '</div>';
+
+            htms += '<div class="home_form_dv">';
+			htms += '<div class="mid_lft" id="mid_lft">';
+			htms += '<table cellpadding="0" border="0" width="87%" class="form_table">';
+    		htms += '<tr>';
+        	htms += '<td><select class="field_select">';
+            htms += '<option>Country</option>';	
+            htms += '</select></td>';
+           	htms += '<td><select class="field_select">';
+            htms += '<option>City</option>	';
+           	htms += ' </select></td>';
+            htms += '<td><input type="text" class="field_text add-icon" placeholder="Address or Zip Code"></td>';
+            htms += '<td><button type="button" class="letsgo_btn">Let’s Go!</button></td>';					
+       		htms += '</tr> ';       
+   			 htms += '</table>';
+			 htms += '</div>';
+			htms += '</div>';
+			//htms += '<div class="map_dv"><img src="images/map.png" width="803" height="282" alt="f"></div>'
+			htms += '<div class="map_dv" id="map_canvas"></div>';
+          	htms += '</div>';
+       		htms += '</div>';
+			
+			 htms += '<div class="most_pop">';
+        	 htms += '<h2 class="heading">Most Popular</h2>';
+             htms += '<div class="home_slider">';
+			 
+			 
+			 
+			 ////////////////////SLIDER////////////////////////
+			 htms += '<iframe src="resources/owl_carousel/index.php" frameborder="0" scrolling="no" style="width: 980px; height: 257px;"></iframe>';
+			 ////////////////////SLIDER///////////////////////
+			 
+			 htms += '</div>';
+             htms += '</div>';
+             htms += '<div class="works_dv">';
+			 htms += '<h2 class="heading">how it works</h2>';
+		     htms += '<div class="main">';
+           	 htms += '<div class="work_step">';
+             htms += '<div class="step_pic"><img src="images/locetion_logo.png"></div>';
+             htms += ' <div class="step_name">Select Location</div>';
+          	 htms += '  </div>';
+            
+            htms += '<div class="work_step">';
+            htms += '<div class="step_pic"><img src="images/pickup_logo.png"></div>';
+            htms += ' <div class="step_name">Pickup Restaurant</div>';
+            htms += '</div>';
+            
+            htms += '<div class="work_step">';
+            	htms += '<div class="step_pic"><img src="images/place_order.png"></div>';
+               htms += ' <div class="step_name">Place Order</div>';
+           htms += '</div>';
+            <!-------------------------------------------------------------------------------------------------------------------------------->
+            htms += '<div class="work_step">';
+            	htms += '<div class="step_pic"><img src="images/make_payment.png"></div>';
+                htms += '<div class="step_name">Make Payment</div>';
+            htms += '</div>';
+            
+            htms += '<div class="work_step">';
+            	htms += '<div class="step_pic"><img src="images/get_delivered.png"></div>';
+                htms += '<div class="step_name">Get Delivered</div>';
+            htms += '</div>';
+            htms += '</div>';
+            
+        htms += '</div>';
+        htms += ' <div class="recents_orders" style="height:490px;">';
+        	htms += '<div class="main">';
+       		 htms += '<h2 class="heading">Most Popular Cuisine</h2>';
+        	htms += '<div class="rc_order_dv" style="height: auto !important;">';
+            	htms += '<table width="100%" border="0" cellpadding="0" cellspacing="0" class="cuisi_tbl">';
+                htms += '  <tr>';
+					if (Main.popularscategory) {
+			for (var l in Main.popularscategory) {
+                  htms += '  <td width="">';
+                   htms += ' 	<div class="cuisi_dv"><a href="Cuisine_' + Main.popularscategory[l]["name"].replace(" ", "-") + '"><img src="panel/images/category/' + Main.popularscategory[l]["id"] + '/1/panel.jpg?c=' + Main.Random +'" alt="" ></a></div>';<!--cuisi_dv-->
+                       htms += ' <span class="cuisi_name"><a    style="text-decoration:none;color:#333;" href="Cuisine_' + Main.popularscategory[l]["name"].replace(" ", "-") + '">' + Main.popularscategory[l]["name"] +'</a></span>';
+                    htms += '</td>';
+                	}
+		}
+       
+                htms += '  </tr>';
+                htms += '</table>';
+     
+           htms += ' </div>';<!--rc_order_dv-->
+           htms += ' <div class="shadow_home"></div>';<!--shadow_home-->
+         htms += ' </div>';<!--main--->
+      htms += '  </div>';<!--recents_orders-->
+        
+      htms += ' <div class="browse_per_city" style="height:450px;">';
+          htms += '  <div class="main">';
+              htms += '  <h2 class="heading">Food of the week</h2>';
+              htms += '  <div class="rc_order_dv" style="height: auto !important; border:1px solid #ccc; padding:20px;">';
+            	
+                htms += '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+                htms += '  <tr>';
+                   htms += ' <td><div class="ad_dv">';
+                	htms += '<a href="#"><img src="images/add-1.png"></a>';
+                htms += '</div><!--ad_dv--></td>';
+                   htms += ' <td><div class="ad_dv" style="margin-left:20px">';
+                htms += '	<a href="#"><img src="images/add-1.png"></a>';
+                htms += '</div></td>';
+                 htms += ' </tr>';
+               htms += ' </table>';
+
+           htms += ' </div>';
+            htms += '<div class="shadow_home"></div>';
+          htms += '  </div>';<!--main-->
+       htms += ' </div>';
+	   
+	   
+        htms += '<div class="recents_orders">';
+        	htms += '<div class="main">';
+       		 htms += '<h2 class="heading">Recents Orders</h2>';
+        	/*htms += '<div class="rc_order_dv">';
+            	htms += '<div class="recent_left">';
+                	htms += '<table border="0" cellspacing="0" cellpadding="0" class="recent_order_table">';
+                     htms += '<tr>';
+                       htms += '<td><img src="images/customer_pic.png"></td>';
+                      htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                    htms += '</tr>';
+                   htms += '<tr>';
+                   htms += '<td><img src="images/customer_pic2.png"></td>';
+                      htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                     htms += '</tr>';
+                     htms += '<tr>';
+                     htms += '<td><img src="images/customer_pic3.png"></td>';
+                   htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                    htms += '</tr>';
+                      htms += '<tr>';
+                       htms += '<td><img src="images/customer_pic4.png"></td>';
+                       htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                     htms += '</tr>';
+                   htms += '</table>';
+
+               htms += '</div>';
+                htms += '<div class="recent_right">';
+                	htms += '<table border="0" cellspacing="0" cellpadding="0" class="recent_order_table">';
+                      htms += '<tr>';
+                       htms += '<td><img src="images/customer_pic5.png"></td>';
+                       htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                     htms += '</tr>';
+                     htms += '<tr>';
+                       htms += '<td><img src="images/customer_pic6.png"></td>';
+                       htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                     htms += '</tr>';
+                      htms += '<tr>';
+                        htms += '<td><img src="images/customer_pic7.png"></td>';
+                       htms += ' <td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                      htms += '</tr>';
+                      htms += '<tr>';
+                       htms += '<td><img src="images/customer_pic8.png"></td>';
+                       htms += '<td><p class="order_text">Mahesh just ordered to <span>Bellavino</span></p></td>';
+                     htms += '</tr>';
+                    htms += '</table>';
+                htms += '</div>';
+            htms += '</div>';*/
+			htms += '<div class="rc_order_dv">';
+			if (Main.recentactivity) {
+							var c = Main.recentactivity.length - 1;
+							var a = 0;
+							var e = 0;
+							var divct = 1;
+							for (var d in Main.recentactivity) {
+								  
+								if (divct == 1){
+								htms += '<div class="recent_left">';
+								htms += '<table border="0" cellspacing="0" cellpadding="0" class="recent_order_table">';
+								}
+								else if(divct == 5)
+								{
+								htms += '<div class="recent_right">';	
+								htms += '<table border="0" cellspacing="0" cellpadding="0" class="recent_order_table">';
+								}
+								
+								
+								htms += '<tr>';
+					/*	if(Main.recentactivity[d].isimg == 0){
+                        htms += '<td><div class="order_user"><img src="panel/images/users/dummy.jpg"></div></td>';
+						}else{*/
+						if(Main.recentactivity[d].id == null){
+						 htms += '<td><div class="order_user"><img src="panel/images/users/small.jpg"></div></td>';	
+						}else{
+                        htms += '<td><div class="order_user"><img src="panel/images/users/'+Main.recentactivity[d].id+'/small.jpg"></div></td>';
+						}
+						/*}*/
+                       htms += ' <td><p class="order_text">'+ Main.TitleCase(Main.recentactivity[d].recentdata.user.name) + " just ordered to " + Main.recentactivity[d].recentdata.business.name + "</span></p></td>";
+                      htms += '</tr>';
+                      
+					  
+					  if (divct == 4){
+								htms += '</table>';
+                                htms += '</div>';
+								}
+								else if(divct == 8)
+								{
+								htms += '</table>';
+                                htms += '</div>';
+								}
+							
+							divct++;	
+							}
+						}
+			
+		
+            htms += '</div>';
+           htms += ' <div class="shadow_home">';
+         htms += ' </div>';
+       htms += ' </div>';
+	     htms += '</div>';
+        htms += '<div class="browse_per_city">';
+            htms += '<div class="main">';
+                htms += '<div class="browse_dv">';
+                	htms += '<h2 class="heading2">Browse per city</h2>';
+                    htms += '<div class="city_dv">';
+					//alert(JSON.stringify(Main.countrycity))
+					
+					  for(dd in Main.countrycity) {
+					  //alert(Main.countrycity[dd].countryname)
+					
+                    	htms += '<h3>'+Main.countrycity[dd].countryname+'</h3>';			
+                      htms += '<div class="city_tbl">';
+                         var count = 0;
+							  
+							 for(ci in Main.countrycity[dd].cityname) {      
+							
+							 var str=Main.countrycity[dd].cityname[ci].name;
+							 var res=str.replace(" ","");
+							 var lower=res.toLowerCase();
+                                htms += '<a href="'+lower+'">'+Main.countrycity[dd].cityname[ci].name+'</a>';
+								
+							
+							 }
+                              
+
+                            htms += '</div>';
+                         }     
+                       /*    htms += ' <h3>Serving India</h3>	';		
+                        htms += '<div class="city_tbl">';
+                         
+                               htms += '<a href="">New York</a>';
+                               htms += '<a href="">Chicago</a>';
+							   htms += '<a href="">New York</a>';
+                               htms += '<a href="">Chicago</a>';
+							   htms += '<a href="">New York</a>';
+                               htms += '<a href="">Chicago</a>';
+							   htms += '<a href="">New York</a>';
+                               htms += '<a href="">Chicago</a>';
+							   htms += '<a href="">New York</a>';
+                               htms += '<a href="">Chicago</a>';
+                            htms += '</div>';*/
+
+                    htms += '</div>';
+                    htms += '<div class="shadow_home"></div>';
+               htms += '</div>';
+                htms += '<div class="fb_dv">';
+                	htms += '<h2 class="heading2">Lets be friends!</h2>';
+		
+                 htms += '<div class="likebox_dv" id="facebookfanpage"></div>';
+                htms += '</div>';
+            htms += '</div>';
+        htms += '</div>';
+		
+        htms += '<div class="apps_dv">';
+        	htms += '<div class="main">';
+               htms += '<div class="mobile_dv"><img src="images/mobile.png"></div>';
+                htms += '<div class="mobile_text_box">';
+               htms += '<div class="mob_text_dv">';
+                	htms += '<h2>Capture and Share the World’s Moments</h2><br />';
+htms += '<p>Instagram is a fast, beautiful and fun way to share your life with friends and family. Take a picture or video, choose a filter to transform its look and feel, then post to instagram- it’s that easy. You can even share to Facebook, Twitter, Tumblr and more. it’s a new way to see the world.<br /><br />Oh yeah, did we mention it’s free?</p>';
+				
+				htms += '<p>'
+				htms += '<img usemap="#Map3" src="images/apps.png">'
+				htms += '<map name="Map3">'
+				htms += '<area shape="rect" coords="6,5,114,32" href="#" >' /*Link of App store*/
+				htms += '<area shape="rect" coords="138,3,233,36" href="#" >' /*Link of Google Play */
+				htms += '</map>'
+				htms += '</p>';
+				
+               htms += ' </div>';
+                
+                htms += '<div class="shadow_home"></div>';
+                 htms += '</div>';
+                
+            htms += '</div>';
+			
+      
+		  $.post("panel/lib/front-main.php", "f=FetchAllsettingsCustomFacebook", function (h) {
+				var s = JSON.parse(h);
+			document.getElementById("facebookfanpage").innerHTML = '<iframe height="300px" frameborder="0" width="300px" scrolling="no" allowtransparency="true" style="border:none; visibility: visible; width:300px; height:240px;" src="'+s.value+'"></iframe>';
+		
+			});
+		<!----------------------------------------------------------------------------------------------------------------------------------------------------->
+		return htms;
+		
+		
+		
+    },
+	
+	CheckSelect1: function(){
+		
+		if ($("#checkbox1").is(':checked')) {
+			Main.deliveryAccept = 1;
+        	$("#checkbox2").prop('checked',false);
+			
+			
+			document.getElementById("deliveryType").value = 1;
+       
+ 		 }
+	},
+	
+	CheckSelect2: function(){
+		 if ($("#checkbox2").is(':checked')) {
+			 Main.deliveryAccept = 2;
+        	$("#checkbox1").prop('checked',false);
+       document.getElementById("deliveryType").value = 2;
+ 		 }
+	},
+	
+    CreateFacepile: function () {
+        return '<div class="facepile"><div class="innerbox hand"><div class="followbox"><span><?= $lang_resource['BODY_FOLLOW_US'] ?></span><a rel="nofollow" href="http://www.facebook.com/pages/Ordering-Online-System/267925886640412" target="_blank"></a><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOrdering-Online-System%2F267925886640412&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80&amp;appId=410337302329626" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:600px; height:80px;" allowtransparency="true" allowTransparency="true"></iframe></div></div></div>​'
+    },
+    CreateMiniWhereAmIButton: function (a, c, b) {
+        if (b) {
+            b = 'id="' + b + '" '
+        } else {
+            b = ""
+        }
+        return "<div " + b + 'class="miniwhereamibutton"><div class="innerbox hand" onclick="' + c + '"><div class="captionbox"><span class="caption nonselectable">' + a + "</span></div></div></div>"
+    },
+    CreateRegularButton: function (d, c, a, e, b) {
+        if (b) {
+            b = 'id="' + b + '" '
+        } else {
+            b = ""
+        }
+        return "<div " + b + 'class="regularbutton"><div class="innerbox hand ' + c + '" onclick="' + e + '"><div class="img ' + d + '"></div><div class="captionbox"><span class="caption nonselectable caption' + c + '">' + a + "</span></div></div></div>"
+    },
+    CreateBigTagInputTextbox: function (d, b, a, c) {
+        return '<div class="biginputbox" style="width:' + a + "px;" + c + '"><div class="biginnerbox">' + d +'<button type="button" class="geo_btn" style="background-color:#dcdcdc; height:44px !important;"  onclick="Main.GetUserLocation1()"><img src="images/homeimage/add-icon.png"></button><div class="tag ' + b + '"></div></div></div>'
+    },
+	CreateBigTagInput: function (d, b, a, c) {
+        return '<div class="biginputbox" style="width:' + a + "px;" + c + '"><div class="biginnerbox">' + d + '<div class="tag ' + b + '"></div></div></div>'
+    },
+    CreateMainStepsBox: function () {
+        // return '<div class="howbox"><div class="tag"></div><div class="innerbox" id="howbox"></div></div>'
+		var hts = '';
+		var hts = '<div class="lft_hm_div">';
+				/*hts += '<h1><?= $lang_resource['HOW_IT_WORKS_V2'] ?></h1>';
+					hts += '<div class="bg_bdy_div">';
+						hts += '<img src="panel/theme/en/homwpage.png" class="flimg" />';
+						hts += '<br clear="all" />';
+						hts += '<div class="cnfsed_div">';
+							hts += '<span><?= $lang_resource['CONFUSED_V2'] ?> <img src="panel/theme/en/youtube.png" /></span>';
+						hts += '</div>';
+					hts += '</div>';
+					hts += '<br clear="all" />';
+					hts += '<br />';
+					hts += '<br />';
+					hts += '<h1><?= $lang_resource['RECENT_ORDERS_V2'] ?></h1>';
+					hts += '<br />';
+					hts += '<div class="bg_bdy_div" id="recentbox">';
+						if (Main.recentactivity) {
+							var c = Main.recentactivity.length - 1;
+							var a = 0;
+							var e = 0;
+							var divct = 1;
+							for (var d in Main.recentactivity) {
+								if (divct == 1){
+								hts += "<div class='recntcnt'>";divct = 0;
+								}
+								hts += '<span class="caption nonselectable default color' + e + '">' + Main.TitleCase(Main.recentactivity[d].user.name) + " <?= $lang_resource['JUST_ORDERED_V2'] ?> " + Main.recentactivity[d].business.name + "</span>";
+								if (a <= c) {
+									hts += '<div class="recentdivider"></div>'
+								}
+								e++;
+								if (e > 1) {
+									e = 0
+								}
+								a++
+								if (d == 4 || d == 9) {
+									hts += "</div>";divct = 1;
+								}
+							}
+						}
+					hts += '</div>';
+				hts += '</div>';*/
+        return hts;
+    },
+    CreateMainActivityBox: function () {
+        var b = "";
+        b = '<div class="activitybox"><div class="innerbox"><div class="tag1"></div><div class="tag2"></div>';
+        b += '<div id="recentbox">';
+        if (Main.recentactivity) {
+            var c = Main.recentactivity.length - 1;
+            var a = 0;
+            var e = 0;
+            for (var d in Main.recentactivity) {
+                b += '<span class="caption nonselectable default color' + e + '">' + Main.TitleCase(Main.recentactivity[d].user.name) + " <?= $lang_resource['JUST_ORDERED_V2'] ?> " + Main.recentactivity[d].business.name + "</span>";
+                if (a < c) {
+                    b += '<div class="recentdivider"></div>'
+                }
+                e++;
+                if (e > 1) {
+                    e = 0
+                }
+                a++
+            }
+        }
+        b += '</div><div class="divider"></div>';
+        b += '<div id="popularbox">';
+        if (Main.populars) {
+            for (var d in Main.populars) {
+                BgStyle = "background-image:url('panel/images/business/" + Main.populars[d] + "/small.jpg?c=" + Main.Random + "');";
+                b += '<div class="img" style="' + BgStyle + '"></div>'
+            }
+        }
+        b += "</div></div></div>";
+        return b
+    },
+    CreateLoginBox: function () {
+        // return '<div class="loginbox" id="loginbox"><div class="innerbox"><div class="tag"></div><div class="ubox"><div id="usermenu"></div></div></div><div class="loginbottom" id="loginbottom"></div></div>'
+		var lgn = '<div class="popdiv_pop" style="display:none;">';		
+				lgn += '<div class="pops_divs">';
+					lgn += '<div class="pop_top"></div>';
+					lgn += '<div class="pop_mid" style="height:465px;">';
+						lgn += '<p>Login</p>';
+						lgn += '<div class="sprt_line"></div>';
+						lgn += '<div class="loginbox" id="loginbox">';
+						lgn += '<div class="innerbox"><div class="ubox"><div id="usermenu"></div></div></div></div>';
+						lgn += '<br clear="all" />';
+						
+						
+						lgn += '<div class="loginbottom" id="loginbottom"></div>';
+					lgn += '</div>';
+					
+				lgn += '</div>';
+			lgn += '</div>';
+
+
+	   return lgn;
+    },
+    CreateSocialButtons: function () {
+        var a = "";
+      /*  a = '<div class="fbtn"><div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-href="http://www.facebook.com/pages/Ordering-Online-System/267925886640412" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"><span style="height: 21px; width: 91px; "><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOrdering-Online-System%2F267925886640412&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=337629469658185" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe></span></div></div><div class="tbtn"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1335513764.html#_=1335912978314&amp;count=horizontal&amp;hashtags=&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=;related=;size=m&amp;text=;url=;" class="twitter-share-button twitter-count-horizontal" style="width: 91px; height: 20px; " title="Twitter Tweet Button"></iframe></div>';*/
+        document.getElementById("socialbtns").innerHTML = Visuals.CreateMobileButton() + Visuals.CreateHelpButton() + a
+    },
+    CreateHelpButton: function () {
+        return '<div class="helpbutton hand nonselectable" onclick="top.location.href=\'support.html\'"><span>Help</span></div>'
+    },
+    CreateMobileButton: function () {
+        return '<div class="mobilebutton hand nonselectable" onclick="top.location.href=\'mobile.php\'"><div class="icon"></div><span>Mobile</span></div>'
+    },
+	
+	EditRegister: function(b){
+		
+		        if (b)
+        {
+			          
+			var FF = new Array();
+			FF.push(
+			{
+				id: "",
+				caption: "<?= $lang_resource['CITY_V2'] ?>"
+			});
+            Forms.Form.user.type = "modify"
+			Forms.Form.user.city = b.city;
+		    Main.PopulateCitySelectRegister(b.country, b.city)
+			/*
+			for(var v in Main.Franchises ) {
+				FF.push(
+			{
+				id: Main.Franchises[v].id;
+				caption: Main.Franchises[v].city;
+			});
+				}*/
+			
+				
+		for (i in Main.Franchises)
+        {
+			//alert(JSON.stringify(Main.Franchises[i]))
+            FF.push(
+            {
+                id: Main.Franchises[i].id,
+                caption: Main.Franchises[i].city
+            })
+        }
+		
+        }
+        else
+        {
+            b = new Object();
+            Forms.Form.user.type = "create";
+            Forms.CreateValue("user", "config", "{}", false, false, true)
+			
+			var FF = new Array();
+			FF.push(
+			{
+				id: "",
+				caption: "<?= $lang_resource['CITY_V2'] ?> *"
+			});
+        }
+
+				
+		/* Choose country */
+		var d = new Array();
+        d.push(
+        {
+            id: "",
+            caption: "Choose Country *"
+        });
+        for (i in Main.Countries)
+        {
+            d.push(
+            {
+                id: Main.Countries[i].id,
+                caption: Main.Countries[i].name
+            })
+        }
+		/* Choose country */
+
+				
+		var a= '<div class="popup_wrapper">';
+        a += '<div class="pop_header">';
+		
+        if (Forms.Form.user.type == "create")
+        {
+            a += '<span class="pop_heading"><h3><?= $lang_resource['LOGIN_CREATE_TITLE'] ?></h3></span>'
+        }
+        else
+        {
+            a += '<span class="pop_heading"><h3> <?= $lang_resource['LOGIN_EDIT_TITLE'] ?></h3></span>'
+        }
+		
+		 a += '<div class="pull_right" style="margin:8px 8px 0px 0px">';
+        	 a += '<button class="pop_close_btn" type="button" onclick="Popup.OnCancel()">X</button>';
+         a += '</div>';
+		
+      
+        a += "</div>";
+		
+		  a += '<div id="popuploadingbox"><div id="popupprogressbox" class="progressbox"><div id="popupprogressbar" class="bar"></div></div></div>';
+		
+		
+		
+		
+		
+		
+a += '<div class="signup_wrapper">';
+
+
+a += '<div class="row">';
+a += '<div class="col-md-4">';
+a +='<form id="uform" enctype="multipart/form-data" method="post" action="panel/upload.php">'
+var c = "";
+        if (b.id)
+        {
+            c = "background-image:url('panel/images/users/" + Main.NullToEmpty(b.id) + "/small.jpg?c=" + new Date().getTime() + "'); "
+        }
+a += '<div class="form-group">';
+a += '<input type="file" class="form-control" name="file[]" style="' + c + '">';
+a += '</div>';
+a +='</form>'
+a += '</div>';
+a += '<div class="col-md-8">';
+a += '<div id="mapboxuser" class="smallmapbox"></div>';
+a += '</div>';
+a += '</div>';
+		
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "name", Main.NullToEmpty(b.name), true,'',"Name *");
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "lastname", Main.NullToEmpty(b.lastname), false,'',"Middle name");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "lastname2", Main.NullToEmpty(b.lastname2), true,'',"Last name *");
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "email", Main.NullToEmpty(b.email), true,'',"Email *");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+if (Forms.Form.user.type == "modify")
+{
+a += Forms.CreateInputPropertyPopUp("user", "pwd", Main.NullToEmpty(b.pwd), false, "", "Password", true);
+} else {
+a += Forms.CreateInputPropertyPopUp("user", "pwd", Main.NullToEmpty(b.pwd), true,"", "Password *", true);	
+
+}
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "street", b.street, true, "GoogleMap.UpdateUserPosition(this)","Street *");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "colony", b.colony, false, "GoogleMap.UpdateUserPosition(this)","Colony *");
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "cp", b.cp, false,'',"Post Code *");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateSelectPropertyPopup("user", "countryregister", d, Main.NullToEmpty(b.country), true, "Main.CountrySelectRegister(this); GoogleMap.UpdateUserPosition(this)");
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateSelectPropertyCPopup("user", "cityregister", FF, Main.NullToEmpty(b.city), true, "GoogleMap.UpdateUserPosition(this)",true,"cityregister");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "tel", b.tel, false,'',"Land Phone");
+a += '</div>';
+a += '</div>';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "cel", b.cel, false,'',"Mobile Phone *");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-6">';
+a += '<div class="form-group">';
+a += Forms.CreateInputPropertyPopUp("user", "api", b.api, false,'',"APT/Suit *");
+a += '</div>';
+a += '</div>';
+a += '</div>';
+
+a += '<div class="row">';
+a += '<div class="col-md-4 col-md-offset-4">';
+if (b)
+{
+a += '<button type="button" id="pop_submit_btn" class="pop_submit_btn" style="width:100%" onclick="Main.PreUserForm()">Create</button>';
+} else  {
+a += '<button type="button" id="pop_submit_btn" class="pop_submit_btn" style="width:100%"  onclick="Main.PreUserForm()">Update</button>';	
+
+}
+//a += '<button type="button" class="pop_submit_btn" id="pop_submit_btn">CREATE</button>';
+a += '</div>';
+
+
+a += '</div>';
+
+
+      
+    
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+       	 Popup.Show(700, 660, a, null, function ()
+        {
+            Main.Ga(Main.ActiveView)
+        }, Main.PreUserForm)
+
+		
+	
+	},
+	ChooseDeliverOption: function (x,y,options,comments,optionsid,total_price,quantitysec)
+    {
+		 Main.Ready();
+		 Main.currentItem = y;
+		 Main.type = "modify";
+		 Main.currentX = x;
+		 Main.Itemoptions = options;
+		 Main.Itemcomments = comments;
+		 Main.Itemoptionsid = optionsid;
+		 Main.Itemtotal_price = total_price;
+		 Main.Itemquantitysec = quantitysec;
+		 
+		Forms.Clean("recover13", "popupmainbuttonok");
+		Forms.CreateValue("recover13", "deliveryoption", "delivery");
+		Main.WhereAmIData.collecttype = "delivery";
+      
+       Main.DeliveryAction()
+},
+ PopulatePseudoCart: function ()
+    {
+
+
+        var b = "";
+        var f = "";
+        for (i in Main.Temp.PseudoCart.business)
+        {
+           // BgStyle = "background-image:url('panel/images/" + Main.NullToEmpty(Main.Temp.PseudoCart.business[i].id) + "/mini.jpg?c=" + Main.Random + "');";
+		      b += '<h3 class="text_center restaurant-name" style=" font-size:22px;">' + Main.Temp.PseudoCart.business[i].name.toUpperCase() + "</h3>";
+			  b += '<p class="text_center drv_comment"><?= $lang_resource['CONTROL_PANEL_ORDERS_EDIT_PAY_METHOD'] ?><span>  Cash</span></p>';
+			  b += '<div class="pop-item-wrapper">';
+          
+            for (j in Main.Temp.PseudoCart.business[i].dishes)
+            {
+			 b += '<div class="item-dv">';
+        	 b += '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+             b += '<tr>';
+             b += '<td><h3 class="pop-item-name">' + Main.Temp.PseudoCart.business[i].dishes[j].name.toUpperCase() + "</h3>";
+             b += '<div style="margin-top:7px;"><input type="text" class="field_text_pop" style="background-color: transparent;padding-left:0px;" id="' + j + "_" + Main.Temp.PseudoCart.business[i].dishes[j].id + '_comments" placeholder="<?= $lang_resource['MOBILE_SIXTH_PAGE_COMMENTS'] ?>" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.business[i].dishes[j].comments) + '" READONLY></div>';
+			 b += '<div id="' + j + "_" + Main.Temp.PseudoCart.business[i].dishes[j].id + '_pseudoingredients"></div>';
+
+             b += '<div id="' + j + "_" + Main.Temp.PseudoCart.business[i].dishes[j].id + '_pseudoextras"></div>';
+             b += '</td>';
+             b += '<td> <div class="pull_right pop-item-price" id="dish_' + j + "_" + Main.Temp.PseudoCart.business[i].dishes[j].id + '_price">' + Shopping.FormatPrice(Main.Temp.PseudoCart.business[i].dishes[j].total) + "</div></td>";
+             b += '</tr>';
+
+             b += '</table>';
+			 b += '</div>';
+             
+            }
+
+			if (parseFloat(Main.Temp.PseudoCart.business[i].shipping) > 0)
+            {
+                a = "<?= $lang_resource['SHOPPING_SECOND_SEND_COST'] ?>"
+            }
+            else
+            {
+                a = "<?= $lang_resource['SHOPPING_SECOND_SEND_NO_COST'] ?>"
+            }
+			 b += '<div class="item-dv">';
+        	 b += '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+             b += '<tr>';
+             b += '<td><h3 class="pop-item-name">' + a + "</h3>";
+             b += '<div style="margin-top:7px;"><input type="text" class="field_text_pop" style="background-color: transparent;padding-left:0px;" id="' + j + "_" + Main.Temp.PseudoCart.business[i].dishes[j].id + '_comments" placeholder="<?= $lang_resource['MOBILE_SIXTH_PAGE_COMMENTS'] ?>" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.business[i].dishes[j].comments) + '" READONLY></div>';
+             b += '</td>';
+             b += '<td> <div class="pull_right pop-item-price"  id="' + Main.Temp.PseudoCart.business[i].id + '_shipping">' + Shopping.FormatPrice(Main.Temp.PseudoCart.business[i].shipping) + "</div></td>";
+             b += '</tr>';
+
+             b += '</table>';
+			 b += '</div>';
+            /*b += '<div class="row">';
+            b += '<div class="logo"><div class="shippingimg"></div></div>';
+            b += '<div class="dishdefinition dishd delcst">';
+
+            b += '<div class="title"><span class="caption nonselectable default">' + a + "</span></div>";
+            b += '<div class="price"><span class="caption" id="' + Main.Temp.PseudoCart.business[i].id + '_shipping">' + Shopping.FormatPrice(Main.Temp.PseudoCart.business[i].shipping) + "</span></div>";
+            // b += '<div onclick="" class="disabledcross"></div>';
+            b += '<textarea id="' + Main.Temp.PseudoCart.business[i].id + '_comments" placeholder="<?= $lang_resource['MOBILE_SIXTH_PAGE_COMMENTS'] ?>" READONLY>' + Main.NullToEmpty(Main.Temp.PseudoCart.business[i].comments) + "</textarea>";
+            b += "</div>";
+            b += "</div>"
+			b += "</div>"
+			*/
+
+		/*	discount section*/
+
+			if(Main.Temp.PseudoCart.discounttype > 0)
+					{
+						if(Main.Temp.PseudoCart.discounttype == 1)
+						{
+						var discaption = 'Discount ('+Main.Temp.PseudoCart.discountrate+'%)';
+						}
+						else
+						{
+						var discaption = 'Discount';
+						}
+						
+		     b += '<div class="item-dv">';
+        	 b += '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+             b += '<tr>';
+             b += '<td><h3 class="pop-item-name">' + discaption + "</h3>";
+             b += '<div style="margin-top:7px;"><input type="text" class="field_text_pop" style="background-color: transparent;padding-left:0px;" id="' + Main.Temp.PseudoCart.business[i].id + '_comments" placeholder="<?= $lang_resource['MOBILE_SIXTH_PAGE_COMMENTS'] ?>" value="'  + Main.NullToEmpty(Main.Temp.PseudoCart.discountcomments) + '" READONLY></div>';
+             b += '</td>';
+             b += '<td> <div class="pull_right pop-item-price"  id="' + Main.Temp.PseudoCart.business[i].id + '_shipping">' + parseFloat(Main.Temp.PseudoCart.discountprice).toFixed(2) + "</div></td>";
+             b += '</tr>';
+
+             b += '</table>';
+			 b += '</div>';
+			 
+
+					}
+					/*	discount section*/
+
+
+
+		/*	Tax section*/
+		if(Main.Temp.PseudoCart.buyer.tax){
+			if(Main.Temp.PseudoCart.buyer.taxtype == 2){
+				var taxstatus="Tax Included in Price"
+			}else{
+				var taxstatus="Tax not Included in Price"
+			}
+			 b += '<div class="item-dv">';
+        	 b += '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+             b += '<tr>';
+             b += '<td><h3 class="pop-item-name">TAX ('+Main.Temp.PseudoCart.buyer.tax+' %)</h3>';
+             b += '<div class="tax_text">'+taxstatus+'</div>';
+             b += '</td>';
+             b += '<td> <div class="pull_right pop-item-price" >' + Shopping.FormatPrice(Main.Temp.PseudoCart.tax) + "</div></td>";
+             b += '</tr>';
+
+             b += '</table>';
+			 b += '</div>';
+		}
+		/*	Tax section*/
+
+
+
+
+
+
+
+
+        }
+        document.getElementById("cartresultsinner").innerHTML = b;
+        var e;
+        var d;
+        var a;
+        var c;
+        for (j in Main.Temp.PseudoCart.business)
+        {
+            Dishes = Main.Temp.PseudoCart.business[j].dishes;
+            for (i in Dishes)
+            {
+                e = Dishes[i].ingredients;
+                d = Dishes[i].extras;
+                Tags.CreateContainer(i + "_" + Dishes[i].id + "_pseudoingredients");
+                Tags.CreateContainer(i + "_" + Dishes[i].id + "_pseudoextras");
+                for (k in e)
+                {
+                    a = e[k].caption.toLowerCase();
+                    a = a.charAt(0).toUpperCase() + a.slice(1);
+                    Tags.CreateTag(i + "_" + Dishes[i].id + "_pseudoingredients",
+                    {
+                        id: e[k].id,
+                        caption: a,
+                        cclass: "ingredient",
+                        enabled: e[k].enabled,
+                        dishindex: i,
+                        businessindex: j,
+                        ingredientindex: k
+                    }, true)
+                }
+                for (k in d)
+                {
+                    a = d[k].name.toLowerCase();
+                    a = a.charAt(0).toUpperCase() + a.slice(1);
+                    Tags.CreateTag(i + "_" + Dishes[i].id + "_pseudoextras",
+                    {
+                        id: d[k].id,
+                        caption: a,
+                        cclass: "extra",
+                        enabled: d[k].enabled,
+                        dish: Dishes[i].id,
+                        price: d[k].price,
+                        enabled: d[k].enabled,
+                        dishindex: i,
+                        businessindex: j,
+                        extraindex: k
+                    }, true)
+                }
+            }
+        }
+    },
+	 MyOrders: function (a)
+    {
+		
+		
+		
+        var b = new Date().getTime();
+        Main.Loading(a);
+        Main.Aid = b;
+        $.post("panel/lib/front-bulk.php", 'data=[{"operation":"FetchMyOrders"}]', function (c)
+        {
+            if (b != Main.Aid)
+            {
+                return
+            }
+            Main.Ready(a);
+            if (c != "")
+            {
+                Main.Ga("/orders");
+                Main.Orders = JSON.parse(c).orders;
+                var d = '';
+				/*d += '<div class="pop_header">';
+                d += '<span class="pop_heading"><h3><?= $lang_resource['ORDERS_BOX_TITLE'] ?></h3></span>';
+				d += '<div class="pull_right" style="margin:8px 8px 0px 0px">';
+        	    d += '<button class="pop_close_btn" type="button" onclick="Popup.Close()">X</button>'
+       		    d += '</div>';
+				 d += "</div>";
+
+				d += '<div id="popuploadingbox"><div id="popupprogressbox" class="progressbox"><div id="popupprogressbar" class="bar"></div></div></div>';*/
+				
+          d += '<div class="checkout_area">'
+          d += '<div class="container">' 
+          d += '<div class="row">'            
+          d += '<div class="col-md-12">'
+
+          d += '<div class="order_dv">'
+          d += '<div class="order_hd">Past Orders <a href="javascript:Main.HomeUrlCustom()" style="float: right;" class="OrderBack">Back</a></div>'
+          <!--order_row-->
+
+
+          for (var e in Main.Orders){
+			 
+			  var k = JSON.parse(Main.Orders[e].data);
+			  //alert(JSON.stringify(k.business[0].dishes.length))
+            d += '<div class="order_row">'
+            d += '<div class="order_in hand" onclick="Visuals.OpenEachOrder(' + Main.Quote(Main.NullToEmpty(Main.Orders[e].id)) + ',true)">'
+            //d += '<tr class="nonselectable hand row' + f + '" style="border-bottom:1px solid #e4e4e4;" onclick="Visuals.OpenEachOrder(' + Main.Quote(Main.NullToEmpty(Main.Orders[e].id)) + ',true)" >';
+            d += '<div class="order_name">'+"Order"+" "+ Main.Orders[e].id + '<p>'+k.business[0].dishes.length+" "+ 'items</p></div>';
+            d += '<div class="order_price">' + Main.NullToEmpty(Main.Orders[e].date) + "</div>";
+			if(Main.Orders[e].city == null){
+			d += '<div class="order_date">&nbsp;</div>';
+			}else{
+            d += '<div class="order_date">' + Main.NullToEmpty(Main.Orders[e].city) + "</div>";
+			}
+            d += '<div class="reorder2">' + Main.NullToEmpty(Main.Orders[e].statustext) + "</div>";
+            d += '</div>';
+            d += '</div>'
+          }
+          
+          d += '</div>'
+          d += '</div>'
+          d += '</div>'
+          d += '</div>'
+          d += '</div>'
+
+
+				  document.getElementById("top").style.display="none";				 
+				 $("#left").empty().append(d);
+				 
+		$('.popdiv_pop').hide();
+		
+                /*Popup.Show(662, 662, d, null, function ()
+                {
+					document.getElementById("hedlogbox").style.display=""
+                   // document.getElementById("popupmainbuttonok").style.display = "block";
+                    Main.Ga(Main.ActiveView)
+                }, function ()
+                {
+
+                    document.getElementById("hedlogbox").style.display = "none";
+                    var h = "";
+                    var g = Main.Orders.length;
+
+					//alert(JSON.stringify(Main.Orders))
+					h += '<tr>';
+
+				 h +=  '<td align="left"><span class="pop_label">#</span></td>';
+				h += '<td align="left"><span class="pop_label"><?= $lang_resource['ORDERS_BOX_DATE_HEADER'] ?></span></td>';
+				h += '<td align="left"><span class="pop_label"><?= $lang_resource['ORDERS_BOX_CITY_HEADER'] ?></span></td>';
+				h += '<td align="left"><span class="pop_label"><?= $lang_resource['ORDERS_BOX_STATUS_HEADER'] ?></span></td>';
+
+               	 h += "</tr>";
+                    for (var e in Main.Orders)
+                    {
+                        var f;
+                        if (e % 2 == 0)
+                        {
+                            f = " grey"
+                        }
+                        else
+                        {
+                            f = ""
+                        }
+                        h += '<tr class="nonselectable hand row' + f + '" style="border-bottom:1px solid #e4e4e4;" onclick="Visuals.OpenEachOrder(' + Main.Quote(Main.NullToEmpty(Main.Orders[e].id)) + ',true)" >';
+                        h += '<td class="oid"><div class="cap"><span class="caption">' + Main.Orders[e].id + "</span></div></td>";
+                        h += '<td class="businessprovider"><div class="cap"><span class="caption">' + Main.NullToEmpty(Main.Orders[e].date) + "</span></div></td>";
+                        h += '<td class="ordercity"><div class="cap"><span class="caption">' + Main.NullToEmpty(Main.Orders[e].city) + "</span></div></td>";
+                        h += '<td class="orderstatus"><div class="cap"><span class="caption">' + Main.NullToEmpty(Main.Orders[e].statustext) + "</span></div></td>";
+						h += '</tr>';
+
+                    }
+
+					 document.getElementById("hedlogbox").style.display="none"
+                    document.getElementById("orders").innerHTML = h
+                })*/
+            }
+            else
+            {
+                alert("Error")
+            }
+        })
+    },
+	OpenEachOrder: function (a,fromInput)
+    {
+
+        Main.Loading(true);
+        var b = new Date().getTime();
+        Main.Aid = b;
+        $.post("panel/lib/front-bulk.php", 'data=[{"operation":"FetchOrderData","id":' + a + "}]", function (d)
+        {
+
+
+            if (b != Main.Aid)
+            {
+                return
+            }
+            Main.Ready(true);
+            Main.Ga("/orders/open/" + a);
+            if (d != "" && d != '{"order":null}')
+            {
+                Main.Temp = new Object();
+                Main.Temp.Order = JSON.parse(d).order;
+                Main.Temp.PseudoCart = JSON.parse(Main.Temp.Order.data);
+
+				var c = "";
+				c += '<div class="popup_wrapper">'
+                c += '<div class="pop_header">';
+                c += '<div class="pop_heading"><h3><?= $lang_resource['Order_V2'] ?> ' + Main.Temp.Order.id + " (" + Main.Temp.Order.status + ")</h3></div>";
+			if((Main.Temp.Order.gprs_url!=null) && (Main.Temp.Order.statnum==4))
+				{
+					
+				c+= '<div class="btota" ><a style="color:#FFF;font-weight:bold;" href="'+ Main.Temp.Order.gprs_url +'" target="_blank"><?=$lang_resource['FRONT_TRACK_DRIVER_GPS'];?></a></div>';
+				}
+			if( Main.Temp.Order.bpermission == "t") {
+        c += '<div class="reorder_track"><button type="button" class="reorder" onclick="Main.Reorderalert(' + Main.Temp.Order.id + ')"><?= $lang_resource['TRACK_REORDER'] ?></button></div>'
+					}
+
+        c += '<div class="pull_right" style="margin:8px 8px 0px 0px">';
+        	c += '<button class="pop_close_btn" type="button" onclick="Popup.OnCancel()">X</button>';
+        c += '</div>';
+    c += '</div>';
+	if(Main.Temp.PseudoCart.business[0].dishes != ""){
+		
+		
+		
+		
+		
+		
+		c += '<div class="pending_ord">';
+	//c += '<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pop_tbl track_tbl" style=" margin:0px 0px 0px 5px">';
+
+	c += '<div class="row">'
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['LOGIN_CREATE_NAME'] ?></label> <input type="text"  placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.name) + '" READONLY/></div>';
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['LOGIN_CREATE_EMAIL'] ?></label> <input type="text" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.email) + '" READONLY/></div>';        
+    c += '</div>';
+	
+	c += '<div class="row">'
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['LOGIN_CREATE_STREET'] ?></label> <input type="text" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.address) + '" READONLY/"></div>';
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['LOGIN_CREATE_PHONE'] ?></label> <input type="text" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.tel) + '" READONLY/></div>';        
+    c += '</div>';
+	
+	c += '<div class="row">'
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['CONTROL_PANEL_BUSINESS_MENUS_COMMENTS_HEADER'] ?></label> <textarea>' + Main.NullToEmpty(Main.Temp.Order.comment) + '</textarea></div>';
+    c += '<div class="col-md-6 pending_dv"><label><?= $lang_resource['FRONT_DRIVER_COMMENTS'] ?></label> <textarea>' + Main.NullToEmpty(Main.Temp.Order.driver_comment) + '</textarea></div>';        
+    c += '</div>';
+	
+      /*c += '<tr>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_NAME'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_EMAIL'] ?></span></td>';
+     c += '</tr>';
+     c += '<tr>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.name) + '" READONLY/></td>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.email) + '" READONLY/></td>';
+     c += '</tr>';*/
+
+	 /*c += '<tr>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_STREET'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_PHONE'] ?></span></td>';
+     c += '</tr>';
+     c += '<tr>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.address) + '" READONLY/"></td>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.buyer.tel) + '" READONLY/></td>';
+      c += '</tr>';*/
+
+      /*c += '<tr>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['CONTROL_PANEL_BUSINESS_MENUS_COMMENTS_HEADER'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['FRONT_DRIVER_COMMENTS'] ?></span></td>';
+     c += '</tr>';
+     c += '<tr>';
+        c += '<td><textarea class="field_area_pop">' + Main.NullToEmpty(Main.Temp.Order.comment) + "</textarea></td>";
+        c += '<td><textarea class="field_area_pop">' + Main.NullToEmpty(Main.Temp.Order.driver_comment) + "</textarea></td>";
+     c += '</tr>';*/
+
+    //c += '</table>';
+	c += "</div>";
+
+	c += '<div id="cartresultsinner">';
+                c += "</div>";
+
+	}
+	
+	if(Main.Temp.PseudoCart.reservestatus){
+		
+		c += '<table width="95%" border="0" cellspacing="0" cellpadding="0" class="pop_tbl track_tbl" style=" margin:0px 0px 0px 5px">'
+		
+		c += '<tr>';
+		c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_NAME'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_EMAIL'] ?></span></td>';
+		c += '</tr>';
+		
+		c += '<tr>';
+		c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.reserve.name) + '" READONLY/></td>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.reserve.email) + '" READONLY/></td>';
+		c += '</tr>';
+		
+		c += '<tr>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['LOGIN_CREATE_PHONE'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['ORDERS_BOX_DATE_HEADER'] ?> :</span></td>';
+		c += '</tr>';
+		
+		c += '<tr>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.reserve.tel) + '" READONLY/></td>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="' + Main.NullToEmpty(Main.Temp.PseudoCart.reserve.rdate) + '" READONLY/"></td>';
+		c += '</tr>';
+		
+		c += '<tr>';
+        c += '<td align="left"><span class="pop_label"><?= $lang_resource['FRONT_DRIVER_TIME'] ?></span></td>';
+        c += '<td align="left"><span class="pop_label"></span></td>';
+		c += '</tr>';
+		
+		c += '<tr>';
+        c += '<td><input type="text" class="field_text_pop" placeholder="" value="'  + Main.NullToEmpty(Main.Temp.PseudoCart.reserve.rhour) + ':'+ Main.NullToEmpty(Main.Temp.PseudoCart.reserve.rmin) + '" READONLY/"></td>';
+        c += '<td></td>';
+		c += '</tr>';
+		
+		c += '</table>';
+	
+	
+
+				
+				
+				c += '<table cellpadding="7"  class="pop_tbl track_tbl1" border="1" style="margin: 0 auto;border-spacing:0;border-collapse:collapse;border-style:solid;" width="95%"><tbody>';
+        c += '<tr><th align="center"><?= $lang_resource['FRONT_RESERVATION_TABLE'] ?></th><th align="center"><?= $lang_resource['FRONT_RESERVATION_ROOM'] ?></th><th align="center"><?= $lang_resource['FRONT_RESERVATION_FREE'] ?></th><th align="center"><?= $lang_resource['PRODUCT_POTIONS_QUANTITY'] ?></th><th align="center"><?= $lang_resource['Price_V2'] ?></th></tr>';
+          //alert(n.reserveQty.Free) 
+		  			c += '<tr><td align="center">'
+		  			c +=Main.NullToEmpty(Main.Temp.PseudoCart.reserveQty.Table);
+                   
+				
+					c +='</td>'
+					c += '<td align="center">'
+					
+				    
+					 c +=Main.NullToEmpty(Main.Temp.PseudoCart.reserveQty.Room) 
+					c +='</td>'
+					c +='<td align="center">'
+					
+					c += Main.NullToEmpty(Main.Temp.PseudoCart.reserveQty.Free);
+					
+					c +='</td>'
+                    c +='<td align="center">'
+					if(Main.Temp.PseudoCart.reserveQty.Table){
+					if(Main.Temp.PseudoCart.reserveQty.Table.length != 0)
+					c += '<span><?= $lang_resource['FRONT_RESERVATION_TABLE'] ?>  </span><span>'+Main.Temp.PseudoCart.reserveQty.Table.length+'</span><span>  X  </span><span>'+Main.Temp.Order.tableprice+'</span><br>'
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Room){
+					if(Main.Temp.PseudoCart.reserveQty.Room.length != 0)
+					c += '<span><?= $lang_resource['FRONT_RESERVATION_ROOM'] ?>  </span><span>'+Main.Temp.PseudoCart.reserveQty.Room.length+'</span><span>  X  </span><span>'+Main.Temp.Order.roomprice+'</span><br>'
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Free){
+					if(Main.Temp.PseudoCart.reserveQty.Free.length != 0)
+					c += '<span><?= $lang_resource['FRONT_RESERVATION_FREE'] ?>  </span><span>'+Main.Temp.PseudoCart.reserveQty.Free.length+'</span><span>  X  </span><span>'+Main.Temp.Order.freeprice+'</span><br>'					
+					}
+					c += '</td>'
+					if(Main.Temp.PseudoCart.reserveQty.Table){
+					var tableprice = Main.Temp.PseudoCart.reserveQty.Table.length * Main.Temp.Order.tableprice ;
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Room){
+					var roomprice = Main.Temp.PseudoCart.reserveQty.Room.length * Main.Temp.Order.roomprice ;
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Free){
+					var freeprice = Main.Temp.PseudoCart.reserveQty.Free.length * Main.Temp.Order.freeprice ;
+					}
+					c += '<td align="center">'
+					if(Main.Temp.PseudoCart.reserveQty.Table){
+					if(tableprice != 0)
+					c += '<span><?= $lang_resource['Panel_Currency'] ?>  '+tableprice.toFixed(2)+'</span><br>'
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Room){
+					if(roomprice != 0)
+					c += '<span><?= $lang_resource['Panel_Currency'] ?>  '+roomprice.toFixed(2)+'</span><br>'
+					}
+					if(Main.Temp.PseudoCart.reserveQty.Free){
+					if(freeprice != 0)
+					c += '<span><?= $lang_resource['Panel_Currency'] ?>  '+freeprice.toFixed(2)+'</span><br>'
+					}
+					
+					c +='</td>'
+                    c += "</tr>";
+					
+                c += '<tr><td colspan="4" align="right">&nbsp;<?= $lang_resource['EXPORT_TOTAL'] ?>&nbsp;</td><td align="center" style="font-weight:bold;font-size:16"><?= $lang_resource['Panel_Currency'] ?>  '+parseFloat(Main.Temp.PseudoCart.reserveFee).toFixed(2)+'</td></tr>'
+					
+                c += "</tbody></table>"
+        c += "</td></tr>"	
+		
+	
+		
+		
+		c +="</tbody></table>"
+				
+
+
+               
+				}
+	
+		   c += '<div class="pop_footer">';
+		   c += '<button type="button" class="close_btnt"  onclick="Popup.Close()"><?= $lang_resource['CLOSE_V21'] ?></button>';
+		   c += '<div class="fcustom_text" ><?= $lang_resource['Your_Total_V2'] ?> :</div>';
+		   c += '<div class="fcustom_total" >' + Shopping.FormatPrice(parseFloat(Main.Temp.PseudoCart.total).toFixed(2)) + "</div>";
+		   c += '</div>';
+           c += "</div>";
+
+
+           Main.ordpopdt = c;
+		   Main.ShowOrderPop();
+		
+            }
+            else
+            {
+		$(".odrstus").html("");
+		$(".showOrd").hide();
+                alert("<?= $lang_resource['FRONT_No_TIENES_PERMISO'] ?>")
+            }
+        })
+    },
+	RecoverForm: function(){
+		$(".popdiv_pop").hide();
+		Forms.Clean("recover", "popupmainbuttonok");
+   
+		
+		
+		var a = '<div class="popup_wrapper">';
+	   a += '<div class="pop_header">';
+      	a +='<div class="pop_heading">';
+	    	a +='<h3>FORGOT PASSWORD?</h3>';
+        a +='</div>';<!--pop_heading-->
+        a +='<div class="pull_right" style="margin:8px 8px 0px 0px">';
+        	a +='<button class="pop_close_btn" type="button" onclick="Popup.OnCancel()">X</button>';
+        a +='</div>';<!--pull_right-->
+    a +='</div>';<!--pop_header-->
+    
+	
+		a +='<div class="forgotp">';
+		a +='<label><?= $lang_resource['RECOVER_PASS_EMAIL'] ?></label>';
+		a +=Forms.CreateInputPropertyPopUp("recover", "email", "", true)
+		a +='<button type="button" class="pop_submit_btn" onclick="Main.RecocerPassSend()">Submit</button>';
+		a +='</div>';
+	
+
+a +='</div>';
+		
+		
+        Main.Ga("/profile/recoverpwd");
+        Popup.ShowFP(640, 400, a, function ()
+        {
+           
+        }, function ()
+        {
+            Forms.Clean("recover");
+            Main.Ga(Main.ActiveView)
+        })
+	},
+
+  LoginDetailsView: function(){
+    Forms.Clean("logindetails", "popupmainbuttonok");
+        Main.ActiveForm = "logindetails";
+        var b = false;
+        var em ="";
+        var ps ="";
+        var chk="";
+
+        if((document.cookie.indexOf('emailID')!= -1)&&(document.cookie.indexOf('passVAL')!= -1)){
+          var em = getCookie("emailID");
+      var ps = getCookie("passVAL");
+      if (em != "" && ps != ""){
+        chk='checked="checked"';
+      }
+    }
+    var em1 = getCookie("emailID");
+    var ps1 = getCookie("passVAL");
+    if(em1==null){   
+      chk ='';
+    }
+
+    var a = '<div class="popup_wrapper">'
+      a += '<div class="pop_header">'
+      a += '<div class="pop_heading">'
+      a += '</div>'
+
+      a += '<div class="pull_right" style="margin:8px 8px 0px 0px">'
+      a += '<button class="pop_close_btn" type="button" onclick="Popup.OnCancel()">X</button>'
+      a += '</div>'
+
+      a += '</div>'
+
+
+      a += '<div class="ncustom_left">'
+      a += '<h3 class="ncustom_heading"><?= $lang_resource['FRONT_RETURNING_CUSTOMER'] ?></h3>'
+      a += '<div class="ncustom_label"><?= $lang_resource['LOGIN_INPUT_EMAIL'] ?></div>'
+
+      a += '<span><input type="text" id="loginemail1" class=" field_text_pop" value="'+Main.NullToEmpty(em)+'" placeholder="E-mail"></span>'
+      a += '<div class="ncustom_label"><?= $lang_resource['LOGIN_INPUT_PASSWORD'] ?></div>'
+
+      a += '<span><input type="password" id="loginpassword1" value="'+Main.NullToEmpty(ps)+'" class=" field_text_pop" placeholder="<?=$lang_resource['FRONT_VISUALS_PASSWORD']?>"></span>'
+      a += '<span><input type="checkbox" id="checkremember" class="allcheckbox" '+chk+'/><label for="checkremember"><span class="pop_label"><?= $lang_resource['FRONT_REMEMBER_ME'] ?></span></label></span>';
+
+      a += '<span><button type="button" class="ncustom_btn" onclick="Main.LoginCheck()" ><?= $lang_resource['FRONT_SIGN_IN_TO_CHECKOUT'] ?></button></span>'
+      a += '<p class="pull_left forgot" onclick="Main.RecoverPassword(true)" style="cursor:pointer;"><?= $lang_resource['LOGIN_LINK_FORGOT_PASSWORD'] ?></p>'
+      a += '</div>'
+
+      a += '<div class="ncustom_right">'
+      a += '<h3 class="ncustom_heading"><?= $lang_resource['FRONT_NEW_CUSTOMER'] ?></h3>'
+      a += '<p class="log-text-2"><?= $lang_resource['FRONT_SAVE_TIME_NOW'] ?></p>'
+      a += '<p class="log-text"><?= $lang_resource['FRONT_YOU_DONT_HAVE_ACCOUNT'] ?></p>'
+      a += '<span><button type="button" class="ncustom_btn" onclick="Shopping.OpenCartGuest()"><?= $lang_resource['FRONT_CONTINUE_AS_A_GUEST'] ?></button></span>'
+      a += '<p class="log-text-2" style="margin-top:20px;"><?=$lang_resource['FRONT_SAVE_TIME_LATTER'];?></p>'
+      a += '<p class="log-text"><?= $lang_resource['FRONT_CREATE_ACCOUNT_FOR_FAST_CHECKOUT'] ?></p>'
+      a += '<span><button type="button" class="ncustom_btn" onclick="Main.EditAccount1(true)"><?= $lang_resource['FRONT_CREATE_ACCOUNT'] ?></button></span>'
+      a += '<div class="ncustomor"><?= $lang_resource['ELSE_V2'] ?></div>'
+      a += '<span><button type="button" class="fb_ncustom_btn" onclick="Facebook.Login()"><?=$lang_resource['LOGIN_IN_WITH_FACEBOOK']?></button></span>'
+      a += '</div>'
+
+      a += '</div>'
+
+      var popupSize = 575;
+      if(IS_PAYPAL_ENABLED == 1)
+        popupSize == 590;
+
+          Popup.Show(590, popupSize, a, Main.SaveWhereAmICustom, null, null, b);
+          if (b){
+          }
+  },
+};

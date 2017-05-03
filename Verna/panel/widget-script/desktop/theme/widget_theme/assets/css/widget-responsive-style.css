@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+@media (min-width: 601px) and (max-width: 10000px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width:1400px){
+
+}
+@media (max-width:1200px){
+.manu_tabs li a{
+	width:19%;
+}
+
+}
+@media (max-width:1199px){
+.success_right_dv{
+	margin-top:15px;
+	
+}
+}
+@media (max-width:991px){
+.rest_dsp{
+	text-align:center;
+}
+.rest_dsp p {
+	text-align: center;
+}
+.rest_logo {
+    margin: 0px auto;
+}
+.rest_dsp h3 {
+	text-align: center;
+}
+.rest_other_dsp .payment-time {
+    text-align: center;
+}
+.reating_dv{
+	display: inline-flex;
+}
+/*---- Restaurant wifget----------*/
+.rest-bottom-panel{
+	position: relative;
+	margin-top:0;
+}
+.manu_tabs li a{
+	width:100%;
+	margin:0px 0px 3px 0px
+}
+.select_category{
+	margin-bottom:15px;
+}
+.product_price_dv {
+    text-align: left;
+    clear: both;
+	margin: 15px 0px 0px 0px;
+}
+.cart_order_now_btn{
+	margin-top:15px;
+}
+.rvw_header_right{
+	float:left;
+	margin-top:15px;
+}
+.user_review_dv .dsp-dv{
+	width:100%;
+	padding-left:0px;
+	margin-top:10px;
+}
+.review_ratings{
+	width:100%;
+	padding-left:0px;
+	margin-top:15px;
+	
+}
+.rvw_header_left{
+	width:100%;
+}
+.listing_btn_dv {
+    margin: 10px 0px 0px 0px;
+}
+.remember_me{
+	margin-bottom:25px;
+}
+.login_sign_up_devider_left {
+    padding-right: 0px;
+}
+.login_sign_up_devider_right {
+    padding-left: 0px;
+}
+}
+@media (max-width:800px){
+
+}
+@media (max-width:799px){
+
+}
+@media (max-width:768px){
+.menu-day li {
+    padding: 4px 4px 4px 4px;
+
+    width: 32%;
+    box-sizing: border-box;
+}
+}
+@media (max-width:767px){
+ 
+.popup_wrapper{
+	width:90% !important;
+}
+.pop_header{
+	width:100% !important;
+}
+
+}
+@media (max-width:640px){
+
+}
+@media (max-width:600px){
+
+}
+@media (max-width:480px){
+	.rating_tbl tr td:first-child{
+	display: none;
+}
+.menu-day li {
+    padding: 4px 4px 4px 4px;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+}
+@media (max-width:400px){
+	
+}
+@media (max-width:320px){
+.delivery-time {
+	font-size:12px;
+	margin-bottom:10px
+}
+.delivery-time span {
+    margin-left:5px;
+}
+}
+

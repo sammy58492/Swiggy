@@ -1,0 +1,77 @@
+/* 
+  Global Transport Direct API Web Services PHP Sample
+  Copyright © 2009-2010 Global Payments Inc. All Rights Reserved.
+*/
+
+form.sale fieldset {
+  border: 1px solid #d0d0d0;
+  margin-bottom: 10px;
+  width: 600px;
+}
+form.sale legend {
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  padding: 5px;
+  font-weight: bold;
+}
+form.sale label {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.8;
+  vertical-align: top;
+}
+form.sale fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+form.sale fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+form.sale fieldset fieldset {
+  border: none;
+  margin: 3px 0 0;
+}
+form.sale fieldset fieldset legend {
+  padding: 0 0 5px;
+  font-weight: normal;
+}
+form.sale fieldset fieldset label {
+  display: block;
+  width: auto;
+}
+form.sale em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+form.sale label {
+  width: 120px; /* Width of labels */
+}
+form.sale fieldset fieldset label {
+  margin-left: 123px; /* Width plus 3 (html space) */
+}
+
+#ajaxLoading {
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  line-height: 50px;
+  text-align: center;
+  width: 400px;
+}
+
+.result {
+  border: 1px solid #d0d0d0;
+  margin: 0;
+  padding: 5px 10px;
+  width: 600px;
+}
+
+h2.result {
+  background-color: #f0f0f0;
+}
+
+p.result {
+  border-top: none;
+}

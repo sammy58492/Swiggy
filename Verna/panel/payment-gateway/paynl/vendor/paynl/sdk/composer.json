@@ -1,0 +1,17 @@
+{
+    "name": "paynl/sdk",
+    "require": {
+        "php-curl-class/php-curl-class": "^4.8"
+    },
+    "authors": [
+        {
+            "name": "Andy Pieters",
+            "email": "andy@pay.nl"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "Paynl\\": "src/"
+        }
+    }
+}

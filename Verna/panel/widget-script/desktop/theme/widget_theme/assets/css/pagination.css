@@ -1,0 +1,36 @@
+.paginatopnarea{
+    float: right;
+    border: 1px solid #a0a0a0;
+    background-color: #fff;
+    margin-bottom: 20px;           
+}
+.paginatopnarea a{
+    position: relative;
+    float: left;
+    padding: 6px 12px;            
+    line-height: 1.42857143;
+    color: #801e17;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 0;
+    cursor: pointer;                        
+}
+.paginatopnarea a:hover{           
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.paginatopnarea a.jp-current, a.jp-current:hover{
+    z-index: 2;
+    cursor: default;
+    background-color: #801e17;
+    border-color: #801e17;
+    color: #FFF;
+}
+.paginatopnarea a.jp-disabled, a.jp-disabled:hover{            
+    cursor: not-allowed;
+}      
+.paginatopnarea span{
+    margin: 0 5px;
+}

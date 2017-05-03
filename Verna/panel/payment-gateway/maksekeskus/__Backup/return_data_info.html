@@ -1,0 +1,55 @@
+
+<table border="1" width="100%" cellspacing="5" cellpadding="5">
+<tbody>
+<tr>
+<td>Parameter</td>
+<td>Constraints</td>
+<td>Description</td>
+</tr>
+<tr>
+<td valign="top"><code>shop</code></td>
+<td valign="top">UUID</td>
+<td valign="top">Shop ID</td>
+</tr>
+<tr>
+<td valign="top"><code>transaction</code></td>
+<td valign="top">UUID</td>
+<td valign="top">Transaction ID</td>
+</tr>
+<tr>
+<td valign="top"><code>status</code></td>
+<td valign="top">Possible values: COMPLETED APPROVED CANCELLED EXPIRED REFUNDED PART_REFUNDED</td>
+<td valign="top">Transaction status. Values are explained <a href="https://maksekeskus.zendesk.com/hc/en-us/articles/201803937-What-do-the-transaction-statuses-mean-">here</a>.</td>
+</tr>
+<tr>
+<td valign="top"><code>amount</code></td>
+<td valign="top">Positive number with 2 decimal places</td>
+<td valign="top">Transaction amount</td>
+</tr>
+<tr>
+<td valign="top"><code>currency</code></td>
+<td valign="top"></td>
+<td valign="top">Transaction currency</td>
+</tr>
+<tr>
+<td valign="top"><code>reference</code></td>
+<td valign="top"></td>
+<td valign="top">Merchant’s order reference, ie. to associate payment data in MK and merchant’s systems</td>
+</tr>
+<tr>
+<td valign="top"><code>customer_name</code></td>
+<td valign="top"></td>
+<td valign="top">Customer’s name who made the payment</td>
+</tr>
+<tr>
+<td valign="top"><code>message_time</code></td>
+<td valign="top"></td>
+<td valign="top">Message timestamp</td>
+</tr>
+<tr>
+<td valign="top"><code>message_type</code></td>
+<td valign="top"></td>
+<td valign="top">Message type is always <b>payment_return</b> for payment confirmation messages.</td>
+</tr>
+</tbody>
+</table>

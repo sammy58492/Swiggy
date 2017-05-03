@@ -1,0 +1,20 @@
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use \Curl\Curl;
+use \Curl\MultiCurl;
+
+$multi_curl = new MultiCurl();
+
+$multi_curl->addPut('https://httpbin.org/put', array(
+    'id' => '123',
+    'subject' => 'hello',
+    'body' => 'hello',
+));
+$multi_curl->addPut('https://httpbin.org/put', array(
+    'id' => '456',
+    'subject' => 'hello',
+    'body' => 'hello',
+));
+
+$multi_curl->start();
